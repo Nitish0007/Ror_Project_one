@@ -1,0 +1,14 @@
+<h3>Articles</h3>
+
+<h5>Our Blog has <%= Article.public_count %> public blogs but currently you can see private and archieved as well </h5>
+
+<ul class="list-group">
+<% @articles.each do |article| %>
+<li class="list-group-item">
+<%= link_to article.title, article %>
+</li>
+<% end %>
+</ul>
+<br />
+
+<%= link_to 'New Article', new_article_path, class:"btn btn-outline-success" %>
